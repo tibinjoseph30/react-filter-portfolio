@@ -44,27 +44,25 @@ function Portfolio() {
       category: "music"
     }
   ];
+  const categorylist = [
+    { id: 1, category: "all", value: "all" },
+    { id: 2, category: "news", value: "all" },
+    { id: 3, category: "sports", value: "all" },
+    { id: 4, category: "music", value: "all" },
+    { id: 5, category: "movie", value: "all" }
+  ];
+
   return (
     <div>
       <Container>
         <Row>
           <Col md="12">
             <ul className="portfolio-nav">
-              <li>
-                <a>all</a>
-              </li>
-              <li>
-                <a>news</a>
-              </li>
-              <li>
-                <a>sports</a>
-              </li>
-              <li>
-                <a>music</a>
-              </li>
-              <li>
-                <a>movie</a>
-              </li>
+              {categorylist.map(types => (
+                <li>
+                  <a>{types.category}</a>
+                </li>
+              ))}
             </ul>
           </Col>
         </Row>
@@ -79,4 +77,5 @@ function Portfolio() {
     </div>
   );
 }
+
 export default Portfolio;
